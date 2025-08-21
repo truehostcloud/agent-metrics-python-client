@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.shift_agent import ShiftAgent
+from agent_metrics_client.models.shift_agent import ShiftAgent
 
 # TODO update the JSON string below
 json = "{}"

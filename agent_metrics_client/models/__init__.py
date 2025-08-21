@@ -14,4 +14,4 @@
 
 
 # import models into model package
-from openapi_client.models.shift_agent import ShiftAgent
+from agent_metrics_client.models.shift_agent import ShiftAgent

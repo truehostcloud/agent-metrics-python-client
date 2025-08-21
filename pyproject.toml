@@ -3,7 +3,7 @@ name = "agent_metrics_client"
 version = "1.0.0"
 description = "Agent Metrics API"
 authors = [
-  {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
+  {name = "truehostcloud",email = "info@truehost.cloud"},
 ]
 license = "MPL-2.0"
 readme = "README.md"
@@ -41,7 +41,7 @@ extension-pkg-whitelist = "pydantic"
 
 [tool.mypy]
 files = [
-  "openapi_client",
+  "agent_metrics_client",
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]
@@ -79,7 +79,7 @@ disallow_any_generics = true
 
 [[tool.mypy.overrides]]
 module = [
-  "openapi_client.configuration",
+  "agent_metrics_client.configuration",
 ]
 warn_unused_ignores = true
 strict_equality = true

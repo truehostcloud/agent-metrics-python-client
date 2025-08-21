@@ -1,4 +1,4 @@
-# openapi_client.OnlineAgentsApi
+# agent_metrics_client.OnlineAgentsApi
 
 All URIs are relative to *http://localhost:8000*
 
@@ -15,14 +15,14 @@ Method | HTTP request | Description
 * Api Key Authentication (TokenAuth):
 
 ```python
-import openapi_client
-from openapi_client.models.shift_agent import ShiftAgent
-from openapi_client.rest import ApiException
+import agent_metrics_client
+from agent_metrics_client.models.shift_agent import ShiftAgent
+from agent_metrics_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = agent_metrics_client.Configuration(
     host = "http://localhost:8000"
 )
 
@@ -38,9 +38,9 @@ configuration.api_key['TokenAuth'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['TokenAuth'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with agent_metrics_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.OnlineAgentsApi(api_client)
+    api_instance = agent_metrics_client.OnlineAgentsApi(api_client)
 
     try:
         api_response = api_instance.online_agents_list()
