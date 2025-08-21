@@ -94,10 +94,8 @@ All URIs are relative to *http://localhost:8000*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*CsatApi* | [**csat_save_create**](docs/CsatApi.md#csat_save_create) | **POST** /csat/save/ | 
-*MetricsApi* | [**metrics_save_create**](docs/MetricsApi.md#metrics_save_create) | **POST** /metrics/save/ | 
 *OnlineAgentsApi* | [**online_agents_list**](docs/OnlineAgentsApi.md#online_agents_list) | **GET** /online-agents/ | 
-*SampleApi* | [**sample_save_create**](docs/SampleApi.md#sample_save_create) | **POST** /sample/save/ | 
+
 
 
 ## Documentation For Models
