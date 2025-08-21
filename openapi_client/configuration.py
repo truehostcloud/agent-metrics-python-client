@@ -113,7 +113,7 @@ HTTPSignatureAuthSetting = TypedDict(
 AuthSettings = TypedDict(
     "AuthSettings",
     {
-        "Basic": BasicAuthSetting,
+        "TokenAuth": APIKeyAuthSetting,
     },
     total=False,
 )
@@ -166,21 +166,24 @@ class Configuration:
 
     :Example:
 
-    HTTP Basic Authentication Example.
+    API Key Authentication Example.
     Given the following security scheme in the OpenAPI specification:
       components:
         securitySchemes:
-          http_basic_auth:
-            type: http
-            scheme: basic
+          cookieAuth:         # name for the security scheme
+            type: apiKey
+            in: cookie
+            name: JSESSIONID  # cookie name
 
-    Configure API client with HTTP basic authentication:
+    You can programmatically set the cookie:
 
 conf = openapi_client.Configuration(
-    username='the-user',
-    password='the-password',
+    api_key={'cookieAuth': 'abc123'}
+    api_key_prefix={'cookieAuth': 'JSESSIONID'}
 )
 
+    The following cookie will be added to the HTTP request:
+       Cookie: JSESSIONID abc123
     """
 
     _default: ClassVar[Optional[Self]] = None
@@ -508,12 +511,14 @@ conf = openapi_client.Configuration(
         :return: The Auth Settings information dict.
         """
         auth: AuthSettings = {}
-        if self.username is not None and self.password is not None:
-            auth['Basic'] = {
-                'type': 'basic',
+        if 'TokenAuth' in self.api_key:
+            auth['TokenAuth'] = {
+                'type': 'api_key',
                 'in': 'header',
                 'key': 'Authorization',
-                'value': self.get_basic_auth_token()
+                'value': self.get_api_key_with_prefix(
+                    'TokenAuth',
+                ),
             }
         return auth
 

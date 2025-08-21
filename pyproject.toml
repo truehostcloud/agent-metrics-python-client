@@ -1,11 +1,11 @@
 [project]
-name = "openapi_client"
+name = "agent_metrics_client"
 version = "1.0.0"
 description = "Agent Metrics API"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
 ]
-license = "NoLicense"
+license = "MPL-2.0"
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Agent Metrics API"]
 requires-python = ">=3.9"
@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
+Repository = "https://github.com/truehostcloud/agent-metrics-python-client.git"
 
 [tool.poetry]
 requires-poetry = ">=2.0"

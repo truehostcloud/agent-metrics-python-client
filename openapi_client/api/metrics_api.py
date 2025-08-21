@@ -250,7 +250,7 @@ class MetricsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Basic'
+            'TokenAuth'
         ]
 
         return self.api_client.param_serialize(

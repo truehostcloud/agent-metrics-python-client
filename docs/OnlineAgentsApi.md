@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ### Example
 
-* Basic Authentication (Basic):
+* Api Key Authentication (TokenAuth):
 
 ```python
 import openapi_client
@@ -31,11 +31,11 @@ configuration = openapi_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure HTTP basic authorization: Basic
-configuration = openapi_client.Configuration(
-    username = os.environ["USERNAME"],
-    password = os.environ["PASSWORD"]
-)
+# Configure API key authorization: TokenAuth
+configuration.api_key['TokenAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TokenAuth'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -62,7 +62,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+[TokenAuth](../README.md#TokenAuth)
 
 ### HTTP request headers
 

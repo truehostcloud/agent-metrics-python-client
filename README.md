@@ -66,11 +66,11 @@ configuration = openapi_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure HTTP basic authorization: Basic
-configuration = openapi_client.Configuration(
-    username = os.environ["USERNAME"],
-    password = os.environ["PASSWORD"]
-)
+# Configure API key authorization: TokenAuth
+configuration.api_key['TokenAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TokenAuth'] = 'Bearer'
 
 
 # Enter a context with an instance of the API client
@@ -107,10 +107,12 @@ Class | Method | HTTP request | Description
 
 
 Authentication schemes defined for the API:
-<a id="Basic"></a>
-### Basic
+<a id="TokenAuth"></a>
+### TokenAuth
 
-- **Type**: HTTP basic authentication
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
 
 
 ## Author
