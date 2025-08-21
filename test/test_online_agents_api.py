@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.online_agents_api import OnlineAgentsApi
+from agent_metrics_client.api.online_agents_api import OnlineAgentsApi
 
 
 class TestOnlineAgentsApi(unittest.TestCase):
